@@ -1,14 +1,14 @@
-import React, { FC } from 'react';
-import { ICTA } from './CTA.type';
-import Text from '../Text';
+import { FC } from 'react';
 import { EColor, ESize } from 'theme/theme.enum';
-import { ETextType, EFontWeight, ETextAlign } from '../Text/Text.enum';
 import Button from '../Button';
+import Text from '../Text';
+import { EFontWeight, ETextAlign, ETextType } from '../Text/Text.enum';
 import styles from './CTA.module.scss';
 
-const cloneCmd = 'npx create-nextjs-dapp';
+const cloneCmd = 'git clone https://github.com/JeremyTheintz/starknext-jotai-dapp';
+const cloneLabel = 'git clone https://github.com/.../starknext-jotai-dapp';
 
-const CTA: FC<ICTA> = () => {
+const CTA: FC = () => {
 	return (
 		<div className={styles.container}>
 			<Text
@@ -19,9 +19,9 @@ const CTA: FC<ICTA> = () => {
 				align={ETextAlign.center}
 				className={styles.text}
 			>
-				Start coding is easy as
-				<Button color={EColor.lightBlue} valueToCopy={cloneCmd + '@latest'} noPaddingResponsive>
-					{cloneCmd}
+				To get started, clone this repository
+				<Button color={EColor.lightOrange} valueToCopy={cloneCmd} noPaddingResponsive>
+					{cloneLabel}
 				</Button>
 			</Text>
 		</div>

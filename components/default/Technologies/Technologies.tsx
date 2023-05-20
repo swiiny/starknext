@@ -5,35 +5,30 @@ import { ITechnologies } from './Technologies.type';
 
 const LOGOS = [
 	{
+		label: 'Starknet',
+		url: 'https://www.starknet.io/en',
+		src: '/assets/logo-starknet-full.svg'
+	},
+	{
 		label: 'NextJs',
 		url: 'https://nextjs.org/',
 		src: '/assets/logo-next.svg'
 	},
 	{
-		label: 'Typescript',
-		url: 'https://www.typescriptlang.org/',
-		src: '/assets/logo-typescript.svg'
+		label: 'Jotai',
+		url: 'https://jotai.org/',
+		src: '/assets/logo-jotai.svg'
+	} /* ,
+	{
+		label: 'Argent X',
+		url: 'https://www.argent.xyz/',
+		src: '/assets/logo-argent-x.svg'
 	},
 	{
-		label: 'React',
-		url: 'https://reactjs.org/',
-		src: '/assets/logo-react.svg'
-	},
-	{
-		label: 'Ethers',
-		url: 'https://docs.ethers.io/v5/',
-		src: '/assets/logo-ethers.svg'
-	},
-	{
-		label: 'WalletConnect',
-		url: 'https://walletconnect.org/',
-		src: '/assets/logo-wallet-connect.svg'
-	},
-	{
-		label: 'MetaMask',
-		url: 'https://metamask.io/',
-		src: '/assets/logo-metamask.svg'
-	}
+		label: 'Braavos',
+		url: 'https://www.braavos.io/',
+		src: '/assets/logo-braavos.svg'
+	} */
 ];
 
 const Technologies: FC<ITechnologies> = () => {

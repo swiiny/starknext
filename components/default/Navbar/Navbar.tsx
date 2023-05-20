@@ -12,7 +12,7 @@ const Navbar = () => {
 	return (
 		<nav className={styles.navbar}>
 			<Text type={ETextType.h1} size={ESize.s}>
-				Create Nextjs Dapp
+				StarkNext Jotai
 			</Text>
 
 			<div>

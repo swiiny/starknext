@@ -1,9 +1,9 @@
-import React, { FC } from 'react';
-import { ITagline } from './Tagline.type';
 import Text from '@components/default/Text';
 import { EFontWeight, ETextAlign, ETextType } from '@components/default/Text/Text.enum';
+import { FC } from 'react';
 import { EColor, ESize } from 'theme/theme.enum';
 import styles from './Tagline.module.scss';
+import { ITagline } from './Tagline.type';
 
 const Tagline: FC<ITagline> = () => {
 	return (
@@ -15,21 +15,16 @@ const Tagline: FC<ITagline> = () => {
 				weight={EFontWeight.regular}
 				align={ETextAlign.center}
 			>
-				{`Starter to create `}
-				<Text type={ETextType.span} color={EColor.blueGradient}>
-					Dapps
+				<Text type={ETextType.span} color={EColor.orangeGradient}>
+					{`Starknet `}
 				</Text>
-				{' with '}
-				<Text type={ETextType.span} color={EColor.blueGradient}>
-					Next
+				x
+				<Text type={ETextType.span} color={EColor.orangeGradient}>
+					{' Nextjs '}
 				</Text>
-				{', '}
-				<Text type={ETextType.span} color={EColor.blueGradient}>
-					React
-				</Text>
-				{' and '}
-				<Text type={ETextType.span} color={EColor.blueGradient}>
-					Ethers
+				x
+				<Text type={ETextType.span} color={EColor.orangeGradient}>
+					{' Jotai'}
 				</Text>
 			</Text>
 
@@ -40,7 +35,7 @@ const Tagline: FC<ITagline> = () => {
 				weight={EFontWeight.regular}
 				align={ETextAlign.center}
 			>
-				No longer waste valuable time building your project structure
+				Build the future
 			</Text>
 		</div>
 	);

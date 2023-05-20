@@ -25,7 +25,7 @@ export function getLocalStorage(key: string): string | Object | null {
 
 	if (item) {
 		try {
-			// test if item is a stringyfied object
+			// test if item is a stringified object
 			item = JSON.parse(item);
 		} catch {
 			// is a string

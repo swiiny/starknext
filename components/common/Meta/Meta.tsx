@@ -1,5 +1,5 @@
-import React, { FC } from 'react';
 import Head from 'next/head';
+import { FC } from 'react';
 import { IMeta } from './Meta.type';
 
 // used to add title, description and other meta tags to the page
@@ -21,7 +21,7 @@ const Meta: FC<IMeta> = ({ title, description, children }) => (
 		<meta name='twitter:title' content={title} />
 		<meta name='twitter:description' content={description} />
 		<meta name='twitter:image' content='https://create-nextjs-d.app/thumbnail.png' />
-		<meta name='twitter:image:alt' content='Create Nextjs Dapp twitter card' />
+		<meta name='twitter:image:alt' content='Starknet x Next x Jotai twitter card' />
 
 		{children}
 	</Head>

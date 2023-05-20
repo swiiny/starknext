@@ -45,10 +45,10 @@ enum EColor {
 	darkGray = 'darkGray',
 	gray = 'gray',
 	blue = 'blue',
-	lightBlue = 'lightBlue',
+	lightOrange = 'lightOrange',
 	success = 'success',
 	yellow = 'yellow',
-	blueGradient = 'blueGradient',
+	orangeGradient = 'orangeGradient',
 	darkGradient = 'darkGradient'
 }
 

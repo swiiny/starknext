@@ -24,7 +24,7 @@
 	}
 }
 
-@mixin transition($target: all, $duration: 0.4s, $delay: 0s, $timing: ease-in-out) {
+@mixin transition($target: all, $duration: 0.2s, $delay: 0s, $timing: ease-in-out) {
 	@media screen and (prefers-reduced-motion: no-preference) {
 		transition: $target $duration $delay $timing;
 	}
@@ -45,8 +45,8 @@
 }
 
 @mixin colors() {
-	&.blueGradient {
-		background: $blueGradient;
+	&.orangeGradient {
+		background: $orangeGradient;
 		-webkit-background-clip: text;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
@@ -72,8 +72,8 @@
 		color: $blue;
 	}
 
-	&.lightBlue {
-		color: $lightBlue;
+	&.lightOrange {
+		color: $lightOrange;
 	}
 
 	&.success {
@@ -84,8 +84,8 @@
 		color: $yellow;
 	}
 
-	&.blueGradient {
-		color: $blueGradient;
+	&.orangeGradient {
+		color: $orangeGradient;
 	}
 
 	&.darkGradient {

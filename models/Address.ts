@@ -1,6 +1,6 @@
-import { getAddress, isAddress } from 'ethers';
+import { ConnectedStarknetWindowObject } from 'get-starknet-core';
 
-export type TAddress = Address | string | undefined;
+export type TAddress = ConnectedStarknetWindowObject | string | undefined;
 
 // inspired by Hop Protocol https://github.com/hop-protocol/hop
 class Address {
@@ -11,10 +11,12 @@ class Address {
 		if (address instanceof Address) {
 			newAddress = address.toString();
 		} else if (typeof address === 'string') {
-			newAddress = getAddress(address);
+			newAddress = address;
 		}
 
-		if (!newAddress || !isAddress(newAddress)) {
+		const isAddress = /^0x[a-fA-F0-9]{40}$/.test(newAddress || '');
+
+		if (!newAddress || isAddress) {
 			throw new Error('Invalid address');
 		}
 

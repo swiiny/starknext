@@ -10,7 +10,7 @@ const HomePage: FC<IHomePage> = () => {
 	return (
 		<>
 			<Meta
-				title='Create Nextjs Dapp'
+				title='Starknet x Next x Jotai'
 				description='Starter to create Dapps with Next, React and Ethers. Start coding is easy as npx create-nextjs-dapp'
 			/>
 

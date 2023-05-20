@@ -1,11 +1,12 @@
 import Navbar from '@components/default/Navbar';
+import { WalletModal } from '@components/default/WalletModal/WalletModal';
 import ResponsiveProvider from '@contexts/ResponsiveContext';
-import Web3Provider from '@contexts/Web3Context';
+import { Provider as JotaiProvider } from 'jotai';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import '../theme/globals.scss';
 
-const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
+const StarkNextJotaiDapp = ({ Component, pageProps }: AppProps) => {
 	return (
 		<>
 			<Head>
@@ -13,26 +14,25 @@ const CreateNextjsDapp = ({ Component, pageProps }: AppProps) => {
 
 				<link rel='apple-touch-icon' href='/icon.png'></link>
 
-				<meta name='application-name' content='Create Nextjs Dapp' />
+				<meta name='application-name' content='StarkNext' />
 				<meta name='apple-mobile-web-app-capable' content='yes' />
 				<meta name='apple-mobile-web-app-status-bar-style' content='default' />
-				<meta name='apple-mobile-web-app-title' content='Create Nextjs Dapp' />
-				<meta
-					name='description'
-					content='Starter to create Dapps with Next, React and Ethers. No longer waste valuable time building your project structure. Start coding is easy as npx create-nextjs-dapp'
-				/>
+				<meta name='apple-mobile-web-app-title' content='StarkNext' />
+				<meta name='description' content='Starter to create Dapps with Next, React and Starknet' />
 
 				<meta name='theme-color' content='#1E1F20' />
 			</Head>
 
-			<ResponsiveProvider>
-				<Web3Provider>
+			<JotaiProvider>
+				<ResponsiveProvider>
 					<Navbar />
+					<WalletModal />
+
 					<Component {...pageProps} />
-				</Web3Provider>
-			</ResponsiveProvider>
+				</ResponsiveProvider>
+			</JotaiProvider>
 		</>
 	);
 };
 
-export default CreateNextjsDapp;
+export default StarkNextJotaiDapp;
