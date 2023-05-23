@@ -8,6 +8,16 @@
 
 	gap: 30px;
 
+	@include transition();	
+	
+	@media (hover: hover) {
+		&:hover {
+			& .logoContainer {
+				opacity: 0.5;
+			}
+		}
+	}
+
 	@include md() {
 		gap: 40px;
 	}
@@ -20,8 +30,6 @@
 .logoContainer {
 	position: relative;
 
-	border-radius: 12px;
-
 	@include transition();
 
 	& > img {
@@ -33,35 +41,17 @@
 			height: 45px;
 		}
 	}
-
-	&::before {
-		content: ' ';
-		position: absolute;
-		top: -15px;
-		left: -20px;
-		right: -20px;
-		bottom: -15px;
-		z-index: -1;
-
-		border-radius: inherit;
-		transition: inherit;
-
-		background-color: $black;
+	
+	@include md() {
+		& + .logoContainer {
+			margin-left: 20px;
+		}
 	}
 
-	&:hover {
-		opacity: 1 !important;
-
-		transform: scale(1.05);
+	@media (hover: hover) {
+		&:hover {
+			opacity: 1 !important;
+			transform: scale(1.05);
+		}
 	}
-}
-
-.link {
-	position: relative;
-
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
 }

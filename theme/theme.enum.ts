@@ -44,7 +44,6 @@ enum EColor {
 	black = 'black',
 	darkGray = 'darkGray',
 	gray = 'gray',
-	blue = 'blue',
 	lightOrange = 'lightOrange',
 	success = 'success',
 	yellow = 'yellow',

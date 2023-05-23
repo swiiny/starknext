@@ -52,13 +52,27 @@
 			}
 		}
 
-		&:hover {
-			transform: scale(1.02);
-
-			color: $gray;
-
-			& svg {
+		@media (hover: hover) {
+			&:hover {
+				transform: scale(1.02);
+				
 				color: $gray;
+				
+				& svg {
+					color: $gray;
+				}
+			}
+		}
+		
+		@media (hover: none) {
+			&:active {
+				transform: scale(1.02);
+				
+				color: $gray;
+				
+				& svg {
+					color: $gray;
+				}
 			}
 		}
 	}

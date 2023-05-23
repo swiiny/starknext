@@ -20,7 +20,7 @@ const Tagline: FC<ITagline> = () => {
 				</Text>
 				x
 				<Text type={ETextType.span} color={EColor.orangeGradient}>
-					{' Nextjs '}
+					{' NextJs '}
 				</Text>
 				x
 				<Text type={ETextType.span} color={EColor.orangeGradient}>

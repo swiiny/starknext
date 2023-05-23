@@ -6,13 +6,13 @@ import { EColor, ESize } from 'theme/theme.enum';
 import WalletButton from '../WalletButton';
 import styles from './Navbar.module.scss';
 
-const repoUrl = 'https://github.com/JeremyTheintz/create-nextjs-dapp';
+const repoUrl = 'https://github.com/JeremyTheintz/starknext';
 
 const Navbar = () => {
 	return (
 		<nav className={styles.navbar}>
 			<Text type={ETextType.h1} size={ESize.s}>
-				StarkNext Jotai
+				StarkNext
 			</Text>
 
 			<div>
