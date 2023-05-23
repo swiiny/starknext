@@ -12,7 +12,7 @@ export default function useDisconnectWallet() {
 
 		starknet.disconnect({ clearLastWallet: true });
 
-		setProvider(defaultProvider);
+		setProvider({ ...defaultProvider });
 
 		clearLocalStorage();
 	}, [setProvider]);

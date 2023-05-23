@@ -17,7 +17,11 @@ export const addressAtom = atom<Address | undefined>((get) => {
 	return Address.from(web3Instance.selectedAddress);
 });
 
-export const walletIdAtom = atom<string | undefined>(undefined);
+export const walletIdAtom = atom<string | undefined>((get) => {
+	const { web3Instance } = get(providerAtom);
+
+	return web3Instance?.id;
+});
 
 export const isWalletModalOpenAtom = atom<boolean>(false);
 

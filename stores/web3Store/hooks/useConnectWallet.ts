@@ -26,12 +26,12 @@ export default function useConnectWallet() {
 				return;
 			}
 
-			const { provider, error } = await _connectWallet(selectedWallet);
+			const { provider: newProvider, error } = await _connectWallet(selectedWallet);
 
 			if (!error) {
-				setProvider(provider);
+				setProvider(newProvider);
 				setIsWalletModalOpen(false);
-				setLocalStorage(WalletLocalStorageKey, selectedWallet.name);
+				setLocalStorage(WalletLocalStorageKey, selectedWallet.id);
 			} else {
 				console.error('connectWallet', error);
 			}

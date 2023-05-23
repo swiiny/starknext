@@ -52,11 +52,26 @@ const Web3Store: FC = () => {
 		checkIfWalletIsConnected();
 	}, [checkIfWalletIsConnected]);
 
+	useEffect(() => {
+		console.debug('provider', provider);
+	}, [provider]);
+
+	/* 	// debug purpose
+	// debug purpose
+	useEffect(() => {
+		console.debug('walletId', walletId);
+	}, [walletId]);
+
+	// debug purpose
+	useEffect(() => {
+		console.debug('address', address);
+	}, [address]);
+ */
 	/* 	useEffect(() => {
 		updateChainId();
 	}, [updateChainId]);
  */
-	return null;
+	return <></>;
 };
 
 export default Web3Store;

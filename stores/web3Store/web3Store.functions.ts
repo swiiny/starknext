@@ -9,19 +9,17 @@ async function _connectWallet(wallet: StarknetWindowObject): Promise<{
 	try {
 		const starknet = getStarknet();
 
-		let _provider: IWeb3Provider = defaultProvider;
+		let _provider: IWeb3Provider = { ...defaultProvider };
 
 		const enabledWallet = await starknet.enable(wallet);
 		_provider.web3Provider = enabledWallet.provider;
 		_provider.web3Instance = enabledWallet;
+		_provider.error = false;
 
 		if (!_provider.web3Provider) throw new Error('No provider');
 
-		console.log('_provider.web3Provider', _provider.web3Provider);
-
 		return {
-			provider: _provider,
-			error: undefined
+			provider: _provider
 		};
 	} catch (err: any) {
 		console.error("Couldn't connect to wallet", wallet.id, err);

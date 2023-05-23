@@ -4,9 +4,10 @@ import ResponsiveProvider from '@contexts/ResponsiveContext';
 import { Provider as JotaiProvider } from 'jotai';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import Web3Store from 'stores/web3Store/Web3Store';
 import '../theme/globals.scss';
 
-const StarkNextJotaiDapp = ({ Component, pageProps }: AppProps) => {
+const StarkNextDapp = ({ Component, pageProps }: AppProps) => {
 	return (
 		<>
 			<Head>
@@ -28,6 +29,8 @@ const StarkNextJotaiDapp = ({ Component, pageProps }: AppProps) => {
 					<Navbar />
 					<WalletModal />
 
+					<Web3Store />
+
 					<Component {...pageProps} />
 				</ResponsiveProvider>
 			</JotaiProvider>
@@ -35,4 +38,4 @@ const StarkNextJotaiDapp = ({ Component, pageProps }: AppProps) => {
 	);
 };
 
-export default StarkNextJotaiDapp;
+export default StarkNextDapp;
