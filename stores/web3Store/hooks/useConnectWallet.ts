@@ -19,14 +19,14 @@ export default function useConnectWallet() {
 				return;
 			}
 
-			const selectedWallet = starknetWallets.data.find((wallet) => wallet.id === id);
+			const selectedWallet = starknetWallets.data?.find((wallet) => wallet.id === id && wallet.isInstalled);
 
-			if (!selectedWallet) {
+			if (!selectedWallet || !selectedWallet.wallet) {
 				console.error('Wallet not found');
 				return;
 			}
 
-			const { provider: newProvider, error } = await _connectWallet(selectedWallet);
+			const { provider: newProvider, error } = await _connectWallet(selectedWallet.wallet);
 
 			if (!error) {
 				setProvider(newProvider);

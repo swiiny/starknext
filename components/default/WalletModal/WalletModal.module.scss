@@ -71,13 +71,11 @@
 		background-color: rgba($gray, 0.4);
 	}
 
-	
-
 	& > img {
 		margin-right: 12px;
 	}
 
-	& + button {
+	& + .modalButton {
 		margin-top: 16px;
 	}
 }

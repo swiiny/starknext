@@ -13,10 +13,7 @@ const nextConfig = {
 	experimental: {
 		runtime: 'nodejs'
 	},
-	env: {
-		RPC_ETHEREUM: process.env.RPC_ETHEREUM,
-		RPC_AVALANCHE: process.env.RPC_AVALANCHE
-	}
+	env: {}
 };
 
 module.exports = nextConfig;

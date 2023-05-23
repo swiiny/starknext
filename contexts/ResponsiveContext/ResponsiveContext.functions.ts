@@ -17,7 +17,7 @@ function getResponsive(): IFrames {
 }
 
 /**
- * Create a function that will delay the execution of the passed
+ * A function that will delay the execution of the passed
  * function for at least `wait` milliseconds.
  *
  * @param {Function} func The function to delay execution of.

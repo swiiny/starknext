@@ -1,4 +1,4 @@
-import { ConnectedStarknetWindowObject } from 'get-starknet-core';
+import { ConnectedStarknetWindowObject, StarknetWindowObject, WalletProvider } from 'get-starknet-core';
 import { constants } from 'starknet';
 
 interface IWeb3Provider {
@@ -18,4 +18,13 @@ interface IWallet {
 	name: string;
 }
 
-export type { IWeb3Provider, INetwork, IWallet };
+type TDiscoverableWallet = WalletProvider & { downloadUrl: string };
+
+type TStarknetWallet = {
+	wallet?: StarknetWindowObject;
+	id: string;
+	isInstalled: boolean;
+	downloadUrl: string;
+};
+
+export type { IWeb3Provider, INetwork, IWallet, TDiscoverableWallet, TStarknetWallet };

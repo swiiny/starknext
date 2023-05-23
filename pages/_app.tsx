@@ -19,7 +19,10 @@ const StarkNextDapp = ({ Component, pageProps }: AppProps) => {
 				<meta name='apple-mobile-web-app-capable' content='yes' />
 				<meta name='apple-mobile-web-app-status-bar-style' content='default' />
 				<meta name='apple-mobile-web-app-title' content='StarkNext' />
-				<meta name='description' content='Starter to create Dapps with Next, React and Starknet' />
+				<meta
+					name='description'
+					content='StarkNext is a boilerplate to help you build your next dapp on Starknet using NextJs and Jotai'
+				/>
 
 				<meta name='theme-color' content='#1E1F20' />
 			</Head>

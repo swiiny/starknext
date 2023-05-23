@@ -34,11 +34,11 @@
 
 	& > img {
 		width: auto;
-		height: 30px;
+		height: 40px;
 
 		@include md() {
 			width: auto;
-			height: 45px;
+			height: 50px;
 		}
 	}
 	

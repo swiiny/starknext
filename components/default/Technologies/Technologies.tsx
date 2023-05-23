@@ -7,8 +7,7 @@ const LOGOS = [
 	{
 		label: 'Starknet',
 		url: 'https://www.starknet.io/en',
-		src: '/assets/logo-starknet-full.svg',
-		scale: 1.2
+		src: '/assets/logo-starknet-full.svg'
 	},
 	{
 		label: 'NextJs',
@@ -34,15 +33,7 @@ const Technologies: FC<ITechnologies> = () => {
 					target='_blank'
 					rel='noopener noreferrer'
 				>
-					<Image
-						src={logo.src}
-						alt={logo.label}
-						width={60}
-						height={60}
-						style={{
-							transform: logo.scale ? `scale(${logo.scale})` : 'scale(1)'
-						}}
-					/>
+					<Image src={logo.src} alt={logo.label} width={60} height={60} />
 				</a>
 			))}
 		</div>

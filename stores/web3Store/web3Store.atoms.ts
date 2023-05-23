@@ -1,9 +1,10 @@
 import Address from '@models/Address';
-import { StarknetWindowObject, getStarknet } from 'get-starknet-core';
+import { WalletProvider, getStarknet } from 'get-starknet-core';
 import { atom } from 'jotai';
 import { loadable } from 'jotai/utils';
 import { constants } from 'starknet';
-import { IWeb3Provider } from './web3Store.type';
+import { getBrowser } from './web3Store.functions';
+import { IWeb3Provider, TDiscoverableWallet, TStarknetWallet } from './web3Store.type';
 import { NETWORKS, defaultProvider } from './web3Store.variables';
 
 export const providerAtom = atom<IWeb3Provider>(defaultProvider);
@@ -31,11 +32,43 @@ export const isWalletConnectedAtom = atom<boolean>((get) => {
 	return typeof address !== 'undefined';
 });
 
-export const starknetWalletsAtom = atom<Promise<StarknetWindowObject[]>>(async (get) => {
+export const starknetWalletsAtom = atom<Promise<TStarknetWallet[]>>(async (get) => {
 	const starknet = getStarknet();
 	const installedWallet = await starknet.getAvailableWallets();
+	const discoveryWallets = await starknet.getDiscoveryWallets();
 
-	return installedWallet || [];
+	// keep only where downloads are available and set downloadUrl value
+	const discoveryWalletsWithAvailableDownloadUrl = discoveryWallets.reduce<TDiscoverableWallet[]>((acc, wallet) => {
+		if (installedWallet.some((installedWallet) => installedWallet.id === wallet.id)) return acc;
+
+		const browser = getBrowser();
+
+		const downloadUrl: string | undefined = wallet.downloads?.[browser as keyof WalletProvider['downloads']];
+
+		if (downloadUrl) {
+			acc.push({
+				...wallet,
+				downloadUrl
+			});
+		}
+
+		return acc;
+	}, []);
+
+	const typedInstalledWallet: TStarknetWallet[] = installedWallet.map((wallet) => ({
+		wallet,
+		id: wallet.id,
+		isInstalled: true,
+		downloadUrl: ''
+	}));
+
+	const typedDiscoveryWallets: TStarknetWallet[] = discoveryWalletsWithAvailableDownloadUrl.map((wallet) => ({
+		id: wallet.id,
+		isInstalled: false,
+		downloadUrl: wallet.downloadUrl
+	}));
+
+	return [...typedInstalledWallet, ...typedDiscoveryWallets];
 });
 
 export const loadableStarknetWalletsAtom = loadable(starknetWalletsAtom);
