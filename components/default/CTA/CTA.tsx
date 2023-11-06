@@ -5,8 +5,8 @@ import Text from '../Text';
 import { EFontWeight, ETextAlign, ETextType } from '../Text/Text.enum';
 import styles from './CTA.module.scss';
 
-const cloneCmd = 'git clone https://github.com/JeremyTheintz/starknext';
-const cloneLabel = 'git clone https://github.com/JeremyTheintz/starknext';
+const cloneCmd = 'git clone https://github.com/swiiny/starknext';
+const cloneLabel = 'git clone https://github.com/swiiny/starknext';
 
 const CTA: FC = () => {
 	return (

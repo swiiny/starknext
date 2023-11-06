@@ -27,7 +27,7 @@ StarkNext is built using a stack of powerful technologies each chosen to provide
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/JeremyTheintz/starknext
+git clone https://github.com/swiiny/starknext
 ```
 
 2. Navigate into your new project directory:
